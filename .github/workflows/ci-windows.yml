@@ -43,11 +43,7 @@ on:
 jobs:
   build_windows:
     name: ${{ matrix.name }}
-    runs-on:
-    - self-hosted
-    - tower
-    - ${{ matrix.os }}
-    - tower-run-${{ github.run_id }}-${{ github.run_attempt }}
+    runs-on: ["self-hosted", "${{ matrix.os }}"]
     defaults:
       run:
         shell: msys2 {0}

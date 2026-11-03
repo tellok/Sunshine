@@ -45,11 +45,7 @@ jobs:
     name: ${{ matrix.name }}
     permissions:
       contents: read
-    runs-on:
-    - self-hosted
-    - tower
-    - ${{ matrix.os }}
-    - tower-run-${{ github.run_id }}-${{ github.run_attempt }}
+    runs-on: ["self-hosted", "${{ matrix.os }}"]
     outputs:
       notarytool_submission_id_arm64: ${{ steps.notarize_submit.outputs.submission_id_arm64 }}
       notarytool_submission_id_x86_64: ${{ steps.notarize_submit.outputs.submission_id_x86_64 }}
@@ -214,11 +210,7 @@ jobs:
     if: inputs.publish_release == 'true'
     permissions:
       contents: read
-    runs-on:
-    - self-hosted
-    - tower
-    - ${{ matrix.os }}
-    - tower-run-${{ github.run_id }}-${{ github.run_attempt }}
+    runs-on: ["self-hosted", "${{ matrix.os }}"]
     strategy:
       fail-fast: false
       matrix:

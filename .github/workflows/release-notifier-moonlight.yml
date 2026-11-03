@@ -9,11 +9,7 @@ on:
 jobs:
   discord:
     if: github.repository_owner == 'LizardByte'
-    runs-on:
-    - self-hosted
-    - tower
-    - ubuntu-latest
-    - tower-run-${{ github.run_id }}-${{ github.run_attempt }}
+    runs-on: ["self-hosted", "ubuntu-latest"]
     permissions: {}
     steps:
     - name: Check if latest GitHub release

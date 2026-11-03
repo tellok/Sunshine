@@ -30,11 +30,7 @@ jobs:
     name: ${{ matrix.os_name }}-${{ matrix.os_version }}${{ matrix.release == true && ' (Release)' || '' }}
     permissions:
       contents: read
-    runs-on:
-    - self-hosted
-    - tower
-    - ${{ matrix.os_name }}-${{ matrix.os_version }}
-    - tower-run-${{ github.run_id }}-${{ github.run_attempt }}
+    runs-on: ["self-hosted", "${{ matrix.os_name }}-${{ matrix.os_version }}"]
     strategy:
       fail-fast: false
       matrix:

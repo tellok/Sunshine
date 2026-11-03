@@ -19,11 +19,7 @@ jobs:
       VERSION: ${{ inputs.release_version }}
     permissions:
       contents: read
-    runs-on:
-    - self-hosted
-    - tower
-    - ubuntu-${{ matrix.dist }}
-    - tower-run-${{ github.run_id }}-${{ github.run_attempt }}
+    runs-on: ["self-hosted", "ubuntu-${{ matrix.dist }}"]
     strategy:
       fail-fast: false
       matrix:
