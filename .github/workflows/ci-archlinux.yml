@@ -24,7 +24,7 @@ jobs:
       COMMIT: ${{ inputs.release_commit }}
     permissions:
       contents: read
-    runs-on: ["self-hosted", "ubuntu-latest"]
+    runs-on: "ubuntu-latest"
     container:
       image: archlinux/archlinux:base-devel
       options: --cpus 4 --memory 8g

@@ -19,7 +19,7 @@ jobs:
       VERSION: ${{ inputs.release_version }}
     permissions:
       contents: read
-    runs-on: ["self-hosted", "ubuntu-${{ matrix.dist }}"]
+    runs-on: "ubuntu-${{ matrix.dist }}"
     strategy:
       fail-fast: false
       matrix:

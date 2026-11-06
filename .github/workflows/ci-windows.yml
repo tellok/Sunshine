@@ -43,7 +43,7 @@ on:
 jobs:
   build_windows:
     name: ${{ matrix.name }}
-    runs-on: ["self-hosted", "${{ matrix.os }}"]
+    runs-on: "${{ matrix.os }}"
     defaults:
       run:
         shell: msys2 {0}

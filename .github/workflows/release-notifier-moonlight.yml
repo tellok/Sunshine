@@ -9,7 +9,7 @@ on:
 jobs:
   discord:
     if: github.repository_owner == 'LizardByte'
-    runs-on: ["self-hosted", "ubuntu-latest"]
+    runs-on: "ubuntu-latest"
     permissions: {}
     steps:
     - name: Check if latest GitHub release
